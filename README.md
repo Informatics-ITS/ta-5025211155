@@ -54,7 +54,7 @@
 
 ## 📚 Dokumentasi Tambahan
 
-- [![Dokumentasi API]](docs/api.pdf)
+- [![Dokumentasi API]](docs/API.pdf)
 - [![Diagram Arsitektur]](docs/architecture.png)
 - [![Struktur Basis Data]](docs/database_schema.sql)
 
