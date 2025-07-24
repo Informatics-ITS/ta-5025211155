@@ -1,58 +1,60 @@
 # 🏁 Tugas Akhir (TA) - Final Project
 
-**Nama Mahasiswa**: [Nama Lengkap]  
-**NRP**: [Nomor Registrasi Pokok]  
-**Judul TA**: [Judul Tugas Akhir]  
-**Dosen Pembimbing**: [Nama Dosen]  
-**Dosen Ko-pembimbing**: [Nama Dosen]
+**Nama Mahasiswa**: Christopher Clement Wijaya  
+**NRP**: 5025211155  
+**Judul TA**: Desain dan Implementasi Aplikasi Parser untuk Rekonstruksi dan Visualisasi Forensic Super Timeline  
+**Dosen Pembimbing**: Hudan Studiawan, S.Kom., M.Kom., Ph.D.  
+**Dosen Ko-pembimbing**: Dr. Baskoro Adi P., S.Kom.,M.Kom.
 
 ---
 
 ## 📺 Demo Aplikasi  
-Embed video demo di bawah ini (ganti `VIDEO_ID` dengan ID video YouTube Anda):  
-
-[![Demo Aplikasi](https://i.ytimg.com/vi/zIfRMTxRaIs/maxresdefault.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)  
+[![Demo Aplikasi](docs/thumbnail.png)](https://youtu.be/nQEIsi2pZXM)  
 *Klik gambar di atas untuk menonton demo*
 
 ---
-
-*Konten selanjutnya hanya merupakan contoh awalan yang baik. Anda dapat berimprovisasi bila diperlukan.*
 
 ## 🛠 Panduan Instalasi & Menjalankan Software  
 
 ### Prasyarat  
 - Daftar dependensi (contoh):
-  - Python 3.10+
-  - Node.js v18+
-  - MySQL 8.0
-  - [Lainnya...]
+  - Python 3.12+ (Sebaiknya dalam virtual environment seperti anaconda karena instruksi instalasi dftpl dalam anaconda)
+  - Pip
+  - Node.js v22.13.0+   
+  - dftpl (branch "python-analyzers", gunakan "main" jika branch "python-analyzers" sudah dimerge ke dalam "main")
 
 ### Langkah-langkah  
 1. **Clone Repository**  
    ```bash
-   git clone https://github.com/Informatics-ITS/TA.git
+   git clone https://github.com/Informatics-ITS/ta-5025211155.git
    ```
 2. **Instalasi Dependensi**
    ```bash
    cd [folder-proyek]
-   pip install -r requirements.txt  # Contoh untuk Python
-   npm install  # Contoh untuk Node.js
+   pip install -r requirements.txt
+   npm install
    ```
-3. **Konfigurasi**
-- Salin/rename file .env.example menjadi .env
-- Isi variabel lingkungan sesuai kebutuhan (database, API key, dll.)
-4. **Jalankan Aplikasi**
-   ```bash
-   python main.py  # Contoh untuk Python
-   npm start      # Contoh untuk Node.js
+3. **Buat folder tambahan dalam root folder sesuai `config.py`. Ubah nama dalam `config.py` sesuai kebutuhan.**
+   - Folder "dist" untuk file hasil vite.
+   - Folder "app/temp" untuk menyimpan sementara file chunked upload.
+   - Folder "app/projects" untuk menyimpan file pengguna.
+4. **Bangun file .vue menggunakan vite**  
+   `Set-ExecutionPolicy` dipanggil agar bisa menjalankan perintah `npm`
    ```
-5. Buka browser dan kunjungi: `http://localhost:3000` (sesuaikan dengan port proyek Anda)
+   Set-ExecutionPolicy Unrestricted -Scope Process 
+   npx vite build
+   ```
+5. **Inisialisasi database user account**
+   ```
+   [Insert python.exe path here] -m flask db upgrade
+   ```
+5. Buka browser dan kunjungi: `http://127.0.0.1:5000`
 
 ---
 
 ## 📚 Dokumentasi Tambahan
 
-- [![Dokumentasi API]](docs/api.md)
+- [![Dokumentasi API]](docs/api.pdf)
 - [![Diagram Arsitektur]](docs/architecture.png)
 - [![Struktur Basis Data]](docs/database_schema.sql)
 
@@ -71,5 +73,5 @@ Pastikan proyek memenuhi kriteria berikut sebelum submit:
 ## ⁉️ Pertanyaan?
 
 Hubungi:
-- Penulis: [email@mahasiswa]
-- Pembimbing Utama: [email@pembimbing]
+- Penulis: [christopher.clement.true@outlook.com]
+- Pembimbing Utama: [hudan@its.ac.id]
